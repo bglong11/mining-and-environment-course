@@ -1,0 +1,130 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #e9f1f7; /* Light global background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    flex-grow: 1;
+}
+
+.main-header {
+    background: #2c3e50; /* Dark Blue-Grey for main header */
+    color: #ecf0f1; /* Light grey text */
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.main-header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.8em;
+}
+
+.course-intro h2,
+.module-navigation h2 {
+    color: #34495e; /* Slightly lighter blue-grey for section titles on index */
+    border-bottom: 2px solid #bdc3c7; /* Light grey border */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.course-intro p,
+.module-navigation p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.module-list {
+    list-style: none;
+    padding: 0;
+}
+
+.module-list li {
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.module-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.module-list li a {
+    text-decoration: none;
+    color: #2980b9; /* Blue link color */
+    font-weight: bold;
+    font-size: 1.1em;
+    display: block; /* Make the whole li clickable essentially */
+}
+
+.module-list li a:hover {
+    color: #1c5980; /* Darker blue on hover */
+}
+
+.main-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Styles for individual module pages (can be expanded) */
+.module-header { /* This class should be added to headers in your module HTML files */
+    background: #3498db; /* Example: a different blue for module headers */
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.module-header h1 {
+    font-size: 2.2em; /* Slightly smaller than main course title */
+}
+.back-link-container {
+    text-align: center; /* Center the container */
+    margin-bottom: 20px; /* Add some space below the link */
+}
+
+.back-link {
+    display: inline-block; /* Allows padding and margin */
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #3498db; /* A distinct but complementary color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #2980b9; /* Darken on hover */
+}
+
+
+/* Ensure module-specific styles from your examples can override if necessary,
+   or integrate common parts of them here. For now, this is a global base. */

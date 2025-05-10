@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining & Climate Change: Emissions & Energy</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.65;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* Light grey-blue background */
+            color: #333a45; /* Dark blue-grey text */
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            margin: 25px auto;
+            overflow: hidden;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        header {
+            background: #34568B; /* Rich Blue */
+            color: #fff;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        header p {
+            color: #cce0ff; /* Lighter blue for subtitle */
+            font-size: 1.1em;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-left: 5px solid #5B8FB9; /* Medium Blue accent */
+            background-color: #fbfdff; /* Slightly off-white for sections */
+        }
+
+        h2 {
+            color: #34568B;
+            border-bottom: 2px solid #82a6d9; /* Lighter blue accent for H2 */
+            padding-bottom: 10px;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #003B46; /* Dark Teal/Blue */
+            margin-top: 28px;
+            font-size: 1.6em;
+        }
+         h4 {
+            color: #4F6367; /* Slate Gray */
+            font-size: 1.2em;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        .interactive-placeholder, .image-placeholder {
+            background-color: #e6f0fa; /* Very light blue */
+            border: 2px dashed #82a6d9;
+            padding: 25px;
+            text-align: center;
+            margin: 25px 0;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #4F6367;
+            border-radius: 8px;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            max-height: 280px; /* Increased height */
+            margin-top: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .quiz-container {
+            background-color: #e9f1f8; /* Light blue for quiz background */
+            border: 1px solid #c1d7f0; /* Softer blue border */
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+
+        .quiz-question {
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #003B46;
+        }
+
+        .quiz-options button {
+            display: block;
+            margin: 8px 0;
+            padding: 10px 15px;
+            background-color: #5B8FB9; /* Medium blue buttons */
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .quiz-options button:hover {
+            background-color: #34568B;
+        }
+        .quiz-options button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .quiz-options button.selected {
+            border: 3px solid #07253F !important; /* Darkest blue */
+            font-weight: bold;
+        }
+
+        .feedback {
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .learn-more button {
+            background-color: #82a6d9; /* Lighter blue */
+            color: #07253F;
+            padding: 10px 18px;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .learn-more button:hover {
+            background-color: #5B8FB9;
+        }
+
+        .learn-more-content {
+            display: none;
+            background-color: #e9f1f8;
+            padding: 18px;
+            margin-top: 12px;
+            border: 1px solid #c1d7f0;
+            border-radius: 5px;
+        }
+        .definition {
+            background-color: #e0eafa;
+            padding: 10px;
+            border-left: 4px solid #34568B;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .definition strong {
+            color: #003B46;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #34568B;
+            color: #fff;
+            margin-top: 30px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.7em;
+            }
+             h3 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mining and Climate Change: Addressing Emissions and Energy Use</h1>
+        <p>Understanding the Industry's Role and Path Towards Sustainability</p>
+    </header>
+
+    <div class="container">
+        <section id="intro">
+            <h2>1. Introduction: Mining in a Changing Climate</h2>
+            <p>Climate change, driven by the increase in greenhouse gases (GHGs) in the atmosphere, is a pressing global challenge. The mining industry, while providing essential raw materials for modern society, is both affected by climate change and contributes to it through its energy consumption and emissions. This lesson explores mining's contribution to GHG emissions, primarily carbon dioxide (CO<sub>2</sub>) from energy use and methane (CH<sub>4</sub>) from coal mining.</p>
+            <h3>Lesson Objectives:</h3>
+            <ul>
+                <li>Understand the concept of greenhouse gases (GHGs) and their role in climate change.</li>
+                <li>Identify how energy consumption in mining operations leads to CO<sub>2</sub> emissions.</li>
+                <li>Explain the sources and significance of methane (CH<sub>4</sub>) emissions from coal mining.</li>
+                <li>Recognize other potential air quality impacts related to mining emissions.</li>
+                <li>Explore strategies for assessing, mitigating, and managing GHG emissions in the mining sector.</li>
+            </ul>
+            <div class="quiz-container" id="diagnostic-quiz">
+                <p class="quiz-question"><strong>Quick Question:</strong> Which of these gases is considered a more potent greenhouse gas than CO<sub>2</sub> over a shorter timeframe (e.g., 20 years)?</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('diagnostic', 'a', this)">a) Oxygen (O<sub>2</sub>)</button>
+                    <button onclick="checkAnswer('diagnostic', 'b', this)">b) Methane (CH<sub>4</sub>)</button>
+                    <button onclick="checkAnswer('diagnostic', 'c', this)">c) Nitrogen (N<sub>2</sub>)</button>
+                </div>
+                <div id="feedback-diagnostic" class="feedback"></div>
+            </div>
+        </section>
+
+        <section id="energy-co2">
+            <h2>2. Energy Consumption and Carbon Dioxide (CO<sub>2</sub>) Emissions</h2>
+            <p>Mining is an energy-intensive industry. Energy is required for exploration, excavation, material transport, processing, and site rehabilitation. The majority of this energy historically comes from fossil fuels, leading to significant CO<sub>2</sub> emissions. (Referenced in Chapters 14 & 27 of "Mining and the Environment").</p>
+
+            <h3>2.1 Major Energy Consumers in Mining:</h3>
+            <ul>
+                <li><strong>Haulage and Transportation:</strong> Large trucks and conveyor systems moving vast quantities of ore and waste rock.</li>
+                <li><strong>Comminution (Crushing & Grinding):</strong> Breaking down rock to liberate minerals is extremely energy-demanding. (Chapter 7 & 23).</li>
+                <li><strong>Ventilation:</strong> Particularly in deep underground mines.</li>
+                <li><strong>Dewatering:</strong> Pumping water out of mine workings.</li>
+                <li><strong>Mineral Processing & Smelting:</strong> Often requires high temperatures and chemical reactions. (Chapter 7).</li>
+            </ul>
+            <p>The type of ore, grade, mining method, and processing technology all influence energy consumption.</p>
+             <div class="image-placeholder">
+                <p>Placeholder: Image of large haul trucks or a mineral processing plant, symbolizing energy use.</p>
+                <!-- Example image link (replace with actual relevant image if possible) -->
+                <!-- <img src="https://example.com/haul_trucks.jpg" alt="Mine Haul Trucks"> -->
+            </div>
+
+            <h3>2.2 CO<sub>2</sub> as a Greenhouse Gas</h3>
+            <div class="definition">
+                <p><strong>Carbon Dioxide (CO<sub>2</sub>)</strong> is a naturally occurring gas, but human activities, primarily the burning of fossil fuels (coal, oil, and natural gas) for energy, have significantly increased its concentration in the atmosphere. It is the primary GHG contributing to global warming.</p>
+            </div>
+            <p>The mining industry's CO<sub>2</sub> footprint is mainly linked to its direct fuel consumption (diesel for trucks, coal for on-site power) and indirect emissions from purchased electricity generated by fossil fuels.</p>
+        </section>
+
+        <section id="methane-coal">
+            <h2>3. Methane (CH<sub>4</sub>) Emissions from Coal Mining</h2>
+            <p>Methane is another potent greenhouse gas, and coal mining is a significant anthropogenic source. (Detailed in Chapter 14.2 of "Mining and the Environment").</p>
+
+            <h3>3.1 What is Methane (CH<sub>4</sub>)?</h3>
+             <div class="definition">
+                <p><strong>Methane (CH<sub>4</sub>)</strong> is a hydrocarbon gas that is the primary component of natural gas. As a GHG, it has a much higher global warming potential (GWP) than CO<sub>2</sub> over shorter timeframes, meaning it traps significantly more heat per molecule.</p>
+            </div>
+            <p>Methane from coal mines is often called Coal Mine Methane (CMM) or Coal Bed Methane (CBM) when extracted prior to or independently of mining.</p>
+
+            <h3>3.2 Sources of Methane in Coal Mines:</h3>
+            <ul>
+                <li><strong>During Coal Formation:</strong> Methane is generated as a byproduct during the geological process of coalification (the transformation of plant matter into coal). This methane becomes trapped within the coal seam and surrounding rock strata.</li>
+                <li><strong>Release During Mining:</strong>
+                    <ul>
+                        <li>Mining activities (blasting, cutting, crushing) fracture the coal and rock, releasing the trapped methane into the mine workings.</li>
+                        <li>Underground coal mines generally release more methane than surface mines due to the higher gas content at depth and the larger exposed coal surfaces.</li>
+                        <li>Ventilation systems in underground mines, designed for safety (to prevent explosive methane concentrations), exhaust CMM into the atmosphere.</li>
+                    </ul>
+                </li>
+                <li><strong>Post-Mining Emissions:</strong> Methane can continue to be released from abandoned mines and coal waste piles.</li>
+            </ul>
+            <div class="image-placeholder">
+                <p>Placeholder: Diagram illustrating methane trapped in a coal seam and its release pathways during underground mining.</p>
+                 <!-- <img src="https://example.com/cmm_diagram.jpg" alt="Coal Mine Methane Diagram"> -->
+            </div>
+            <p>Methane is not only a GHG but also a safety hazard in underground coal mines due to its flammability (the "Fire Triangle" concept - Chapter 14.3).</p>
+        </section>
+
+        <section id="assessment-mitigation-ghg">
+            <h2>4. Assessing and Mitigating Greenhouse Gas Emissions</h2>
+            <p>Addressing GHG emissions requires quantification, followed by strategic mitigation efforts.</p>
+
+            <h3>4.1 Assessing GHG Emissions:</h3>
+            <ul>
+                <li><strong>GHG Inventories:</strong> Systematically identifying and quantifying all sources of GHG emissions from a mining operation (direct and indirect). This includes CO<sub>2</sub> from fuel combustion, electricity use, and CH<sub>4</sub> from coal seams.</li>
+                <li><strong>Life Cycle Assessment (LCA):</strong> A more comprehensive approach that considers emissions throughout the entire lifecycle of the mineral product, from extraction to end-of-life. (Mentioned in Chapter 27.2.9).</li>
+                <li><strong>Emission Factors:</strong> Standardized values that relate the quantity of a pollutant released to an activity level (e.g., kg CO<sub>2</sub> per liter of diesel burned).</li>
+            </ul>
+
+            <h3>4.2 Mitigation Strategies:</h3>
+            <h4>Reducing CO<sub>2</sub> Emissions:</h4>
+            <ul>
+                <li><strong>Energy Efficiency:</strong> Optimizing processes, using more efficient equipment (e.g., modern haul trucks, energy-efficient grinding circuits), and reducing energy waste.</li>
+                <li><strong>Fuel Switching:</strong> Transitioning from higher-carbon fuels (like coal) to lower-carbon fuels (like natural gas) or renewables for power generation and mobile equipment.</li>
+                <li><strong>Renewable Energy:</strong> Incorporating solar, wind, or geothermal energy for on-site power needs, particularly in remote locations.</li>
+                <li><strong>Electrification of Equipment:</strong> Replacing diesel-powered vehicles and machinery with electric alternatives where feasible.</li>
+                <li><strong>Carbon Capture, Utilization, and Storage (CCUS):</strong> Technologies to capture CO<sub>2</sub> emissions from large point sources (like power plants or smelters) and store them underground or utilize them in other products. CCS is still an evolving technology. (Chapter 14).</li>
+            </ul>
+            <div class="image-placeholder">
+                <p>Placeholder: Image of a mine site incorporating renewable energy, e.g., solar panels or wind turbines.</p>
+                <!-- <img src="https://example.com/mine_solar_panels.jpg" alt="Solar Panels at Mine Site"> -->
+            </div>
+            <h4>Reducing Methane (CH<sub>4</sub>) Emissions from Coal Mines (Chapter 14.2.2):</h4>
+            <ul>
+                <li><strong>Methane Drainage (Degasification):</strong> Drilling into coal seams before or during mining to extract methane.
+                    <ul>
+                        <li><strong>Pre-mining drainage:</strong> Recovers CBM for utilization.</li>
+                        <li><strong>Post-mining drainage (gob wells):</strong> Captures methane from mined-out areas.</li>
+                    </ul>
+                </li>
+                <li><strong>Methane Utilization:</strong> Using captured CMM for:
+                    <ul>
+                        <li>Power generation on-site.</li>
+                        <li>Heating.</li>
+                        <li>Sale to natural gas pipelines (if quality is sufficient).</li>
+                    </ul>
+                </li>
+                <li><strong>Methane Flaring/Oxidation:</strong> If utilization is not feasible, converting methane to CO<sub>2</sub> (which has a lower GWP) by flaring or using ventilation air methane (VAM) abatement technologies.</li>
+            </ul>
+             <div class="learn-more">
+                <button onclick="toggleLearnMore('lm-ccs')">Learn More: Carbon Capture & Storage (CCS)</button>
+                <div id="lm-ccs" class="learn-more-content">
+                    <p>CCS involves three main steps:
+                    1. <strong>Capture:</strong> Separating CO<sub>2</sub> from other gases produced at industrial facilities (e.g., power plants, cement plants, smelters).
+                    2. <strong>Transport:</strong> Compressing the captured CO<sub>2</sub> and transporting it via pipelines, ships, or road tankers.
+                    3. <strong>Storage:</strong> Injecting the CO<sub>2</sub> into deep underground geological formations, such as depleted oil and gas reservoirs or deep saline aquifers, for long-term isolation from the atmosphere.
+                    While promising, CCS faces challenges related to cost, energy penalty, public acceptance, and long-term storage security.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-studies-ghg">
+            <h2>5. Case Study Snippet</h2>
+            <h4>Uncontrolled Coal and Peat Fires in Indonesia (CO<sub>2</sub> & other GHGs)</h4>
+            <p>The case study on uncontrolled forest, peat, and coal fires in Indonesia (Chapter 14, Case 14.1 of "Mining and the Environment") highlights how natural events exacerbated by land use practices (including land clearing that can expose coal seams) can lead to massive GHG emissions. The 1997-98 fires released enormous amounts of CO<sub>2</sub>, significantly impacting the global carbon budget for that year. This illustrates the link between land management, coal characteristics (spontaneous combustion), and large-scale atmospheric impacts.</p>
+        </section>
+        
+        <section id="quiz-final">
+            <h2>Check Your Understanding</h2>
+            <div class="quiz-container" id="final-quiz-1">
+                <p class="quiz-question"><strong>Question 1:</strong> The primary source of CO<sub>2</sub> emissions directly from most non-coal mining operations is:</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('fq1', 'a', this)">a) Chemical reactions during ore processing</button>
+                    <button onclick="checkAnswer('fq1', 'b', this)">b) Combustion of fossil fuels for energy (e.g., vehicles, power)</button>
+                    <button onclick="checkAnswer('fq1', 'c', this)">c) Release of trapped gases from the ore body</button>
+                    <button onclick="checkAnswer('fq1', 'd', this)">d) Wind erosion of carbon-rich waste rock</button>
+                </div>
+                <div id="feedback-fq1" class="feedback"></div>
+            </div>
+            <div class="quiz-container" id="final-quiz-2">
+                <p class="quiz-question"><strong>Question 2:</strong> Methane (CH<sub>4</sub>) is primarily a concern in which type of mining?</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('fq2', 'a', this)">a) Gold mining</button>
+                    <button onclick="checkAnswer('fq2', 'b', this)">b) Copper mining</button>
+                    <button onclick="checkAnswer('fq2', 'c', this)">c) Coal mining</button>
+                    <button onclick="checkAnswer('fq2', 'd', this)">d) Bauxite (aluminum) mining</button>
+                </div>
+                <div id="feedback-fq2" class="feedback"></div>
+            </div>
+        </section>
+
+        <section id="conclusion">
+            <h2>6. Conclusion: Mining's Path in a Carbon-Constrained World</h2>
+            <p>The mining industry's contribution to climate change, through CO<sub>2</sub> emissions from energy use and CH<sub>4</sub> from coal mining, is a significant concern. However, the industry is also crucial for providing materials needed for a transition to a low-carbon economy (e.g., copper for electrification, lithium for batteries). Moving forward, a focus on energy efficiency, adoption of renewable energy sources, effective methane management in coal mining, and continued innovation in areas like CCS will be essential for the mining sector to reduce its GHG footprint and operate more sustainably in a carbon-constrained world.</p>
+            <h3>Points for Reflection & Discussion:</h3>
+            <ul>
+                <li>What are the biggest economic and technical hurdles for mines to adopt renewable energy sources?</li>
+                <li>How can the mining industry better communicate its role in providing materials essential for green technologies while also addressing its own emissions?</li>
+                <li>What policies could governments implement to incentivize GHG reduction in the mining sector effectively?</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dental ORE Prep Online</p>
+    </footer>
+
+    <script>
+        const answers = {
+            diagnostic: 'b',
+            fq1: 'b',
+            fq2: 'c'
+        };
+
+        function checkAnswer(quizId, selectedOption, buttonEl) {
+            const feedbackEl = document.getElementById('feedback-' + quizId);
+            const optionsContainer = buttonEl.parentElement;
+            const buttons = optionsContainer.getElementsByTagName('button');
+
+            for (let btn of buttons) {
+                btn.disabled = true;
+                btn.classList.remove('selected'); 
+            }
+            buttonEl.classList.add('selected');
+
+            if (selectedOption === answers[quizId]) {
+                feedbackEl.textContent = 'Correct! '+ (quizId === 'diagnostic' ? 'Methane is significantly more potent in trapping heat.' : 'Great job!');
+                feedbackEl.className = 'feedback correct';
+            } else {
+                const correctAns = answers[quizId].toUpperCase();
+                feedbackEl.textContent = 'Not quite. The correct answer is ' + correctAns + '. '+ (quizId === 'diagnostic' ? 'Methane has a higher Global Warming Potential.' : 'Review the relevant section to clarify.');
+                feedbackEl.className = 'feedback incorrect';
+            }
+        }
+
+        function toggleLearnMore(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                button.textContent = "Show Less";
+            } else {
+                content.style.display = "none";
+                // Extract the topic from the button text to keep it consistent
+                let originalText = button.getAttribute('data-original-text');
+                if (!originalText) { // Store original text if not already stored
+                    originalText = button.textContent;
+                    button.setAttribute('data-original-text', originalText);
+                }
+                 button.textContent = originalText;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const learnMoreButtons = document.querySelectorAll('.learn-more button');
+            learnMoreButtons.forEach(button => {
+                // Store the original text to use when toggling back
+                button.setAttribute('data-original-text', button.textContent);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining Impacts: Water & Soil Contamination</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6; /* Light grayish green */
+            color: #333;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow: hidden;
+            padding: 25px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        header {
+            background: #2d6a4f; /* Dark Green */
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.3em;
+            font-weight: 600;
+        }
+        header p {
+            color: #d8f3dc; /* Light green text */
+        }
+
+        section {
+            margin-bottom: 35px;
+            padding: 25px;
+            border-left: 5px solid #40916c; /* Medium Green accent */
+            background-color: #fbfcfb;
+        }
+
+        h2 {
+            color: #40916c;
+            border-bottom: 2px solid #74c69d; /* Lighter Green accent */
+            padding-bottom: 12px;
+            font-size: 1.9em;
+        }
+
+        h3 {
+            color: #1b4332; /* Darker Green */
+            margin-top: 28px;
+            font-size: 1.5em;
+        }
+         h4 {
+            color: #555;
+            font-size: 1.2em;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            list-style-position: outside;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        .interactive-placeholder, .image-placeholder {
+            background-color: #edf6f1; /* Very light green */
+            border: 2px dashed #74c69d;
+            padding: 25px;
+            text-align: center;
+            margin: 25px 0;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #495057;
+            border-radius: 8px;
+        }
+
+        .quiz-container {
+            background-color: #f1f8f3; /* Light green-tinted white */
+            border: 1px solid #b7e4c7; /* Pale green border */
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+
+        .quiz-question {
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #1b4332;
+        }
+
+        .quiz-options button {
+            display: block;
+            margin: 8px 0;
+            padding: 10px 15px;
+            background-color: #52b788; /* Medium green buttons */
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .quiz-options button:hover {
+            background-color: #40916c;
+        }
+        .quiz-options button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .quiz-options button.selected {
+            border: 3px solid #081c15 !important; /* Darkest green */
+            font-weight: bold;
+        }
+
+        .feedback {
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .feedback.correct {
+            background-color: #d1e7dd; /* Pale green success */
+            color: #0f5132;
+            border: 1px solid #badbcc;
+        }
+
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #842029;
+            border: 1px solid #f5c2c7;
+        }
+
+        .learn-more button {
+            background-color: #74c69d; /* Lighter green */
+            color: #081c15;
+            padding: 10px 18px;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .learn-more button:hover {
+            background-color: #52b788;
+        }
+
+        .learn-more-content {
+            display: none;
+            background-color: #f1f8f3;
+            padding: 18px;
+            margin-top: 12px;
+            border: 1px solid #b7e4c7;
+            border-radius: 5px;
+        }
+        .definition {
+            background-color: #e6f7f0;
+            padding: 10px;
+            border-left: 4px solid #2d6a4f;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .definition strong {
+            color: #1b4332;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #2d6a4f;
+            color: #fff;
+            margin-top: 30px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 1.9em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+             h3 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mining's Impact: Contamination of Water & Soil</h1>
+        <p>Understanding Sources, Processes, and Mitigation</p>
+    </header>
+
+    <div class="container">
+        <section id="intro">
+            <h2>1. Introduction: Water and Soil - Essential Resources at Risk</h2>
+            <p>Water and soil are fundamental to life and healthy ecosystems. Mining processes, while essential for extracting valuable minerals, can inadvertently lead to the contamination of these vital resources if not managed with utmost care. This lesson explores how chemicals and physical alterations from mining can impact water quality and soil health, focusing on the sources, pathways, and types of contamination.</p>
+            <h3>Lesson Objectives:</h3>
+            <ul>
+                <li>Identify common contaminants released from mining processes affecting water and soil.</li>
+                <li>Understand the formation and environmental consequences of Acid Rock Drainage (ARD).</li>
+                <li>Recognize how mining influences local hydrology, water balance, and hydrogeology.</li>
+                <li>Learn about key geochemical tests used to assess ARD potential (e.g., ABA, NAG).</li>
+                <li>Explore methods for mitigating and managing contamination.</li>
+            </ul>
+            <div class="quiz-container" id="diagnostic-quiz">
+                <p class="quiz-question"><strong>Quick Question:</strong> What is the primary cause of Acid Rock Drainage (ARD)?</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('diagnostic', 'a', this)">a) Spillage of acidic processing chemicals</button>
+                    <button onclick="checkAnswer('diagnostic', 'b', this)">b) Exposure of sulphide-bearing minerals to air and water</button>
+                    <button onclick="checkAnswer('diagnostic', 'c', this)">c) Radioactive decay of certain ore types</button>
+                </div>
+                <div id="feedback-diagnostic" class="feedback"></div>
+            </div>
+        </section>
+
+        <section id="general-contamination">
+            <h2>2. General Water and Soil Quality Issues from Mining</h2>
+            <p>Mining activities can release a variety of substances and alter physical conditions, leading to contamination of surrounding water bodies and soils. (Referenced in Chapters 10 & 16 of "Mining and the Environment").</p>
+
+            <h3>2.1 Sources of Contamination</h3>
+            <ul>
+                <li><strong>Mine Effluents:</strong> Water discharged from mining operations (e.g., dewatering, processing plants) can carry contaminants. (Chapter 16.3).</li>
+                <li><strong>Tailings Disposal:</strong> Tailings, the fine-grained waste material from ore processing, can contain residual chemicals and metals. Seepage or failure of tailings storage facilities (TSFs) are major concerns. (Chapter 23).</li>
+                <li><strong>Waste Rock Dumps:</strong> Rock excavated to access ore may contain minerals that leach contaminants when exposed to weather. (Chapter 24).</li>
+                <li><strong>Stockpiles and Haul Roads:</strong> Runoff from ore and material stockpiles, and dust from haul roads, can carry pollutants into water systems.</li>
+                <li><strong>Accidental Spills:</strong> Spills of fuel, lubricants, or processing chemicals.</li>
+            </ul>
+            <div class="image-placeholder">Image Placeholder: Diagram showing various sources of contamination at a mine site (e.g., tailings pond, waste rock dump, pit water).</div>
+
+            <h3>2.2 Types of Contaminants & Water Quality Parameters</h3>
+            <p>Common water quality issues stemming from mining include (Chapter 9 for baseline parameters, Chapter 16 for effluent characteristics):</p>
+            <ul>
+                <li><strong>Metals:</strong> Heavy metals (e.g., lead, mercury, cadmium, arsenic, copper, zinc) can be toxic to aquatic life and humans.</li>
+                <li><strong>Acidity (Low pH):</strong> Often associated with ARD, making water corrosive and harmful to organisms.</li>
+                <li><strong>Turbidity & Suspended Solids:</strong> Fine particles clouding the water, reducing light penetration for aquatic plants and potentially harming fish gills.</li>
+                <li><strong>Oil and Grease:</strong> From machinery and vehicle maintenance.</li>
+                <li><strong>Radioactivity:</strong> From mining uranium or other radioactive ores.</li>
+                <li><strong>Toxic Compounds:</strong> Such as cyanide (used in gold processing) or other processing reagents.</li>
+                <li><strong>Nutrients:</strong> Though less common, excess nutrients (e.g., from explosives residues or camp sewage) can cause eutrophication.</li>
+                <li><strong>Salinity:</strong> Increased dissolved salts can affect freshwater ecosystems.</li>
+            </ul>
+            <p>Soil contamination mirrors many of these issues, with metals and altered pH being primary concerns, impacting soil fertility and plant growth.</p>
+        </section>
+
+        <section id="ard">
+            <h2>3. Acid Rock Drainage (ARD) - A Major Challenge</h2>
+            <p>Acid Rock Drainage (ARD), also known as Acid Mine Drainage (AMD), is one of the most significant and persistent environmental problems in the mining industry. (Detailed in Chapter 22 of "Mining and the Environment").</p>
+
+            <h3>3.1 What is ARD?</h3>
+            <div class="definition">
+                <p><strong>Acid Rock Drainage (ARD)</strong> is acidic water, rich in dissolved metals and sulphate, that forms from the chemical weathering (oxidation) of sulphide minerals when they are exposed to air and water.</p>
+            </div>
+            <p>The primary culprit is often pyrite (iron sulphide, FeS<sub>2</sub>), commonly found in association with many metal ores and coal deposits.</p>
+
+            <h3>3.2 How ARD Forms</h3>
+            <ol>
+                <li><strong>Exposure:</strong> Mining activities (excavation of open pits, underground workings, waste rock dumps, tailings) expose large quantities of sulphide-bearing rock to atmospheric oxygen and water.</li>
+                <li><strong>Oxidation:</strong> Pyrite reacts with oxygen and water to produce sulphuric acid and dissolved iron. This initial reaction can be slow.
+                    <p><code>2FeS<sub>2</sub> (pyrite) + 7O<sub>2</sub> + 2H<sub>2</sub>O → 2Fe<sup>2+</sup> + 4SO<sub>4</sub><sup>2-</sup> + 4H<sup>+</sup> (acid)</code></p>
+                </li>
+                <li><strong>Acidification & Metal Leaching:</strong> The sulphuric acid lowers the pH of the water. This acidic water then becomes very effective at dissolving other heavy metals (like copper, zinc, lead, cadmium, arsenic) present in the surrounding rock.</li>
+                <li><strong>Role of Bacteria:</strong> Certain types of bacteria (e.g., *Acidithiobacillus ferrooxidans*) thrive in acidic conditions and dramatically accelerate the oxidation of pyrite and other sulphide minerals, thereby accelerating ARD generation. This is a key catalyst.</li>
+            </ol>
+            <div class="image-placeholder">Image Placeholder: Diagram illustrating the ARD formation process (Sulphide mineral + Oxygen + Water → Acid + Dissolved Metals). Include a visual of "yellowboy" precipitate.</div>
+            <p>The resulting ARD can have extremely low pH (highly acidic) and carry high concentrations of toxic metals and sulphates, severely impacting aquatic ecosystems and potentially contaminating drinking water sources.</p>
+
+            <h3>3.3 Assessing ARD Potential</h3>
+            <p>Predicting whether mine materials will generate acid is crucial for planning. Key geochemical tests include (Chapter 22.2):</p>
+            <ul>
+                <li><strong>Acid-Base Accounting (ABA):</strong> This test compares the acid-producing potential (AP) of a rock sample (primarily from its sulphide content) with its acid-neutralizing potential (NP) (from carbonate minerals like calcite).
+                    <ul>
+                        <li>If NP > AP, the rock is likely non-acid forming (NAF).</li>
+                        <li>If AP > NP, the rock is potentially acid forming (PAF).</li>
+                        <li>The Net Neutralizing Potential (NNP = NP - AP) and Neutralization Potential Ratio (NPR = NP/AP) are key outputs.</li>
+                    </ul>
+                </li>
+                <li><strong>Net Acid Generation (NAG) Test:</strong> A more direct test where a rock sample is reacted with hydrogen peroxide to rapidly oxidize sulphides. The final pH of the solution and the amount of acid generated are measured.
+                    <ul>
+                        <li>A low NAG pH (e.g., < 4.5) indicates acid generation.</li>
+                    </ul>
+                </li>
+                <li><strong>Kinetic Tests (e.g., Humidity Cells):</strong> Long-term laboratory tests that simulate weathering conditions to observe the rate and quality of leachate generated over time. These are more complex and time-consuming but provide more detailed information.</li>
+            </ul>
+             <div class="learn-more">
+                <button onclick="toggleLearnMore('lm-aba')">Learn More: Acid-Base Accounting (ABA)</button>
+                <div id="lm-aba" class="learn-more-content">
+                    <p>ABA involves several steps:
+                    1. Measuring the total sulphur content (often assuming all sulphur is in sulphide form like pyrite to calculate Maximum Potential Acidity - MPA).
+                    2. Measuring the Acid Neutralizing Capacity (ANC) by reacting the sample with a strong acid and then titrating to determine how much acid was consumed.
+                    3. Calculating Net Potential Acidity (NAPP = MPA - ANC) or Net Neutralizing Potential (NNP = ANC - MPA).
+                    Results are often categorized based on NAPP values and the ratio of ANC to MPA.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="hydrology-impacts">
+            <h2>4. Impacts on Water Balance & Hydrology</h2>
+            <p>Mining operations can significantly alter the local and sometimes regional movement and storage of water. (Referenced in Chapter 16.3 and Chapter 8.3).</p>
+            <ul>
+                <li><strong>Water Usage:</strong> Mines often require large volumes of water for mineral processing (e.g., milling, flotation), dust suppression, and domestic use. This can deplete local surface or groundwater sources, especially in arid regions.</li>
+                <li><strong>Dewatering:</strong>
+                    <ul>
+                        <li><em>Open Pits:</em> Pumping groundwater to keep the pit dry can lower the water table in surrounding areas, affecting wells, springs, and wetlands. The pit itself can become a "groundwater sink."</li>
+                        <li><em>Underground Mines:</em> Similar dewatering efforts are needed, which can also impact regional groundwater flow.</li>
+                    </ul>
+                </li>
+                <li><strong>Alteration of Landforms:</strong>
+                    <ul>
+                        <li>Waste rock dumps and tailings facilities can cover large areas, altering surface runoff patterns, increasing infiltration in some areas and reducing it in others.</li>
+                        <li>Removal of vegetation reduces evapotranspiration and can increase runoff.</li>
+                        <li>Compaction of soil by heavy equipment can reduce infiltration and increase surface runoff.</li>
+                    </ul>
+                </li>
+                <li><strong>Changes to Hydrogeology:</strong> Dewatering can change groundwater flow directions and rates. Mine voids (pits or underground workings) can become permanent features in the hydrogeological system, potentially acting as sources or sinks for groundwater after mining ceases (pit lakes).</li>
+            </ul>
+            <div class="interactive-placeholder">Interactive Diagram Placeholder: A watershed map showing a mine. Illustrate pre-mining water flow, and then how dewatering and landform changes alter groundwater levels and surface runoff paths.</div>
+        </section>
+
+        <section id="mitigation-management-water">
+            <h2>5. Mitigation and Management Strategies</h2>
+            <p>Addressing water contamination and hydrological impacts requires a comprehensive approach throughout the mine life, from planning to post-closure.</p>
+            <h3>5.1 General Water Management</h3>
+            <ul>
+                <li><strong>Water Balance Management:</strong> Understanding all water inputs, outputs, and storage to optimize water use and minimize discharges.</li>
+                <li><strong>Clean Water Diversion:</strong> Diverting clean surface water around disturbed areas to prevent contamination and reduce the volume of water needing management.</li>
+                <li><strong>Sediment and Erosion Control:</strong> (Covered in detail in the previous lesson) - essential for preventing turbidity and suspended solids from entering watercourses.</li>
+                <li><strong>Water Treatment:</strong> Treating contaminated mine water (effluents, seepage) to meet discharge standards before release. Treatment methods vary depending on the contaminants (e.g., lime neutralization for acidic water, specific metal removal processes).</li>
+                <li><strong>Spill Prevention and Control:</strong> Robust procedures for handling and storing chemicals, fuels, and oils.</li>
+            </ul>
+
+            <h3>5.2 ARD Prevention and Control (Chapter 22.2.3)</h3>
+            <p>The primary strategy is to prevent the oxidation of sulphide minerals:</p>
+            <ul>
+                <li><strong>Exclusion of Oxygen and/or Water:</strong>
+                    <ul>
+                        <li><em>Water Covers:</em> Storing PAF waste rock or tailings permanently under water (e.g., in a pit lake or specially designed TSF) to limit oxygen access.</li>
+                        <li><em>Dry Covers (Caps):</em> Placing a low-permeability cover (e.g., soil, geosynthetics) over PAF materials to reduce infiltration of water and oxygen.</li>
+                    </ul>
+                </li>
+                <li><strong>Segregation and Special Handling:</strong> Identifying and separating PAF waste rock from NAF material. PAF material can then be encapsulated within NAF rock or managed with specific controls.</li>
+                <li><strong>Blending with Alkaline Materials:</strong> Mixing PAF waste with materials rich in neutralizing minerals (like limestone) to buffer any acid generated.</li>
+                <li><strong>Chemical Treatment:</strong> Applying chemicals that inhibit sulphide oxidation or bacterial activity (less common for large volumes).</li>
+                <li><strong>Collection and Treatment of Leachate:</strong> If ARD cannot be prevented, systems are designed to collect the acidic leachate and treat it before discharge. This can be a long-term, costly commitment.</li>
+            </ul>
+            <div class="image-placeholder">Image Placeholder: Diagram of a "dry cover" system over a waste rock dump, or a subaqueous tailings disposal method.</div>
+
+            <h3>5.3 Hydrological Impact Management</h3>
+            <ul>
+                <li><strong>Water Conservation & Recycling:</strong> Minimizing fresh water intake by recycling process water.</li>
+                <li><strong>Re-injection:</strong> Pumping dewatered groundwater back into aquifers (if quality permits) to mitigate drawdown effects.</li>
+                <li><strong>Landform Design for Closure:</strong> Designing final landforms (e.g., pit lakes, rehabilitated dumps) to integrate with the post-mining hydrological regime and minimize long-term adverse impacts.</li>
+            </ul>
+        </section>
+
+        <section id="case-studies-water">
+            <h2>6. Case Study Snippets</h2>
+            <h4>Case Study 1: The Berkeley Pit, Montana, USA (ARD)</h4>
+            <p>An enormous former open-pit copper mine that ceased operations in 1982. Dewatering pumps were turned off, and the pit began to fill with highly acidic (pH ~2.5) water rich in heavy metals, forming a toxic pit lake. It's a major Superfund site, with ongoing challenges for remediation and preventing contamination of surrounding groundwater. (Referenced in Chapter 16.7)</p>
+            <div class="image-placeholder">Image Placeholder: Photo of the Berkeley Pit lake showing its distinctive color.</div>
+
+            <h4>Case Study 2: Tailings Dam Failure & Water Contamination (Baia Mare, Romania or Mount Polley, Canada)</h4>
+            <p>A catastrophic tailings dam failure (e.g., Baia Mare in 2000 released cyanide and heavy metals; Mount Polley in 2014 released vast amounts of tailings into waterways) can cause severe, widespread, and long-lasting contamination of rivers and downstream ecosystems, impacting aquatic life and human water users. This highlights the critical importance of robust tailings management. (Referenced in Chapter 23)</p>
+        </section>
+        
+        <section id="quiz-final">
+            <h2>Check Your Understanding</h2>
+            <div class="quiz-container" id="final-quiz-1">
+                <p class="quiz-question"><strong>Question 1:</strong> Which of these is NOT a common contaminant type found in mine effluents?</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('fq1', 'a', this)">a) Heavy Metals</button>
+                    <button onclick="checkAnswer('fq1', 'b', this)">b) High pH (Alkalinity)</button>
+                    <button onclick="checkAnswer('fq1', 'c', this)">c) Suspended Solids</button>
+                    <button onclick="checkAnswer('fq1', 'd', this)">d) Pesticides</button>
+                </div>
+                <div id="feedback-fq1" class="feedback"></div>
+            </div>
+            <div class="quiz-container" id="final-quiz-2">
+                <p class="quiz-question"><strong>Question 2:</strong> The primary aim of an Acid-Base Accounting (ABA) test is to:</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('fq2', 'a', this)">a) Measure the current pH of mine water.</button>
+                    <button onclick="checkAnswer('fq2', 'b', this)">b) Identify the types of bacteria accelerating ARD.</button>
+                    <button onclick="checkAnswer('fq2', 'c', this)">c) Compare a rock's acid-generating potential with its neutralizing capacity.</button>
+                    <button onclick="checkAnswer('fq2', 'd', this)">d) Determine the optimal method for treating ARD.</button>
+                </div>
+                <div id="feedback-fq2" class="feedback"></div>
+            </div>
+        </section>
+
+        <section id="conclusion">
+            <h2>7. Conclusion: Protecting Our Water and Soil</h2>
+            <p>Contamination of soil, groundwater, and surface water represents one of the most critical environmental liabilities for the mining industry. Understanding the sources, the complex geochemical and hydrological processes involved (especially ARD), and implementing robust, site-specific mitigation and management strategies are paramount for protecting these essential resources. While challenges are significant, proactive planning, sound engineering, and ongoing monitoring are key to minimizing mining's impact on the aquatic and terrestrial environments.</p>
+            <h3>Points for Reflection & Discussion:</h3>
+            <ul>
+                <li>Why is ARD considered such a long-term and difficult challenge to manage?</li>
+                <li>How can mining companies best balance the need for water (for processing, dust suppression) with the need to protect local water resources, especially in water-scarce regions?</li>
+                <li>What role do communities play in the long-term monitoring and stewardship of water quality post-mining?</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dental ORE Prep Online</p>
+    </footer>
+
+    <script>
+        const answers = {
+            diagnostic: 'b',
+            fq1: 'd', // Pesticides are not common from mining itself, though can be used at sites. Metals, Low pH (acidity), Suspended Solids are.
+            fq2: 'c'
+        };
+
+        function checkAnswer(quizId, selectedOption, buttonEl) {
+            const feedbackEl = document.getElementById('feedback-' + quizId);
+            const optionsContainer = buttonEl.parentElement;
+            const buttons = optionsContainer.getElementsByTagName('button');
+
+            for (let btn of buttons) {
+                btn.disabled = true;
+                btn.classList.remove('selected'); 
+            }
+            buttonEl.classList.add('selected');
+
+            if (selectedOption === answers[quizId]) {
+                feedbackEl.textContent = 'Correct! '+ (quizId === 'diagnostic' ? 'The exposure of sulphide minerals is the key trigger.' : 'Excellent!');
+                feedbackEl.className = 'feedback correct';
+            } else {
+                const correctAns = answers[quizId].toUpperCase();
+                feedbackEl.textContent = 'Not quite. The correct answer is ' + correctAns + '. '+ (quizId === 'diagnostic' ? 'ARD forms when sulphides react with air and water.' : 'Review the relevant section.');
+                feedbackEl.className = 'feedback incorrect';
+            }
+        }
+
+        function toggleLearnMore(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                button.textContent = "Show Less";
+            } else {
+                content.style.display = "none";
+                button.textContent = "Learn More" + button.textContent.substring(button.textContent.lastIndexOf(":")); 
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const learnMoreButtons = document.querySelectorAll('.learn-more button');
+            learnMoreButtons.forEach(button => {
+                const topic = button.textContent.substring(button.textContent.lastIndexOf(":")+1).trim(); 
+                button.textContent = `Learn More: ${topic}`;
+            });
+        });
+    </script>
+</body>
+</html>

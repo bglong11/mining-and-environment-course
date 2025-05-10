@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining Impacts: Land Use & Landform Changes</title>
+    <style>
+        body {
+            font-family: 'Lato', Arial, sans-serif; /* Changed font */
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfcfa; /* Warm off-white */
+            color: #4a4a4a; /* Dark grey */
+        }
+
+        .container {
+            width: 88%; /* Slightly wider */
+            max-width: 1050px;
+            margin: 25px auto;
+            overflow: hidden;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Softer, larger shadow */
+            border-radius: 12px;
+        }
+
+        header {
+            background: #8B4513; /* Sienna - Earthy Brown */
+            color: #fff;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            margin-bottom: 35px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.6em;
+            font-weight: 700;
+        }
+        header p {
+            color: #f5e9dd; /* Light beige for subtitle */
+            font-size: 1.15em;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 28px;
+            border-left: 6px solid #A0522D; /* Darker Sienna accent */
+            background-color: #fffaf5; /* Very light beige */
+        }
+
+        h2 {
+            color: #8B4513;
+            border-bottom: 3px solid #CD853F; /* Peru - Lighter Brown accent */
+            padding-bottom: 12px;
+            font-size: 2.1em;
+            margin-bottom: 22px;
+        }
+
+        h3 {
+            color: #5D4037; /* Brownish Grey */
+            margin-top: 30px;
+            font-size: 1.7em;
+        }
+         h4 {
+            color: #795548; /* Lighter Brownish Grey */
+            font-size: 1.25em;
+            font-style: italic;
+            margin-top: 18px;
+        }
+
+        ul, ol {
+            padding-left: 22px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        .interactive-placeholder, .image-placeholder {
+            background-color: #f5f0e9; /* Light beige */
+            border: 2px dashed #CD853F;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+            min-height: 220px; /* Increased height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #6D4C41; /* Darker beige text */
+            border-radius: 10px;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            max-height: 300px; /* Increased height */
+            margin-top: 12px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+
+
+        .quiz-container {
+            background-color: #fff8f0; /* Very light beige for quiz */
+            border: 1px solid #e4d5c7; /* Pale brown border */
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        .quiz-question {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #5D4037;
+        }
+
+        .quiz-options button {
+            display: block;
+            margin: 8px 0;
+            padding: 12px 18px;
+            background-color: #A0522D; /* Sienna buttons */
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            border-radius: 6px;
+            transition: background-color 0.25s;
+        }
+
+        .quiz-options button:hover {
+            background-color: #8B4513;
+        }
+        .quiz-options button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .quiz-options button.selected {
+            border: 3px solid #4A2C2A !important; /* Darkest Brown */
+            font-weight: bold;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .feedback.correct {
+            background-color: #e8f5e9; /* Pale green success */
+            color: #388e3c;
+            border: 1px solid #c8e6c9;
+        }
+
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .learn-more button {
+            background-color: #CD853F; /* Peru - Lighter Brown */
+            color: #4A2C2A;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 18px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .learn-more button:hover {
+            background-color: #A0522D;
+        }
+
+        .learn-more-content {
+            display: none;
+            background-color: #fff8f0;
+            padding: 20px;
+            margin-top: 15px;
+            border: 1px solid #e4d5c7;
+            border-radius: 6px;
+        }
+        .definition {
+            background-color: #faebd7; /* Antique white */
+            padding: 12px;
+            border-left: 5px solid #8B4513;
+            margin: 18px 0;
+            border-radius: 5px;
+        }
+        .definition strong {
+            color: #5D4037;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #8B4513;
+            color: #fff;
+            margin-top: 35px;
+            border-radius: 0 0 12px 12px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 2.1em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+             h3 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Reshaping the Earth: Land Use & Landform Changes in Mining</h1>
+        <p>Understanding Mining's Footprint on the Landscape</p>
+    </header>
+
+    <div class="container">
+        <section id="intro">
+            <h2>1. Introduction: Mining's Transformation of the Land</h2>
+            <p>Mining, by its very nature, involves altering the Earth's surface and subsurface to extract mineral resources. These activities inevitably lead to changes in land use (how the land is utilized by humans and nature) and landform (the physical shape and features of the land). This lesson will explore the types of landform changes, the scale of land use alteration, and the implications for the environment and future land rehabilitation.</p>
+            <h3>Lesson Objectives:</h3>
+            <ul>
+                <li>Identify the main ways mining activities alter landforms (e.g., open pits, waste dumps).</li>
+                <li>Understand how mining changes pre-existing land uses and its societal implications.</li>
+                <li>Recognize the significant land area often required for waste rock and tailings storage.</li>
+                <li>Discuss the concept of "residual footprint" after mine closure.</li>
+                <li>Explore principles of landform design for rehabilitation and post-mining land use.</li>
+            </ul>
+            <div class="quiz-container" id="diagnostic-quiz">
+                <p class="quiz-question"><strong>Quick Question:</strong> Which type of mining typically creates the largest and most visible alteration to the landform at the surface?</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('diagnostic', 'a', this)">a) Underground mining with small surface entry points</button>
+                    <button onclick="checkAnswer('diagnostic', 'b', this)">b) Solution mining (in-situ leaching)</button>
+                    <button onclick="checkAnswer('diagnostic', 'c', this)">c) Large-scale open-pit surface mining</button>
+                </div>
+                <div id="feedback-diagnostic" class="feedback"></div>
+            </div>
+        </section>
+
+        <section id="landform-changes">
+            <h2>2. Altering the Earth's Contours: Mining-Induced Landform Changes</h2>
+            <p>Mining operations create new landforms and significantly modify existing ones. The scale and nature of these changes depend on the type of mining, the geology of the ore deposit, and the volume of material moved. (Referenced in Chapters 8.2.2, 16.1, 24, & 26 of "Mining and the Environment").</p>
+
+            <h3>2.1 Excavations: Open Pits and Quarries</h3>
+            <div class="definition">
+                <p><strong>Open-pit mines</strong> involve excavating large depressions to access ore bodies near the surface. These can become vast, deep voids, dramatically altering the pre-mining topography.</p>
+            </div>
+            <ul>
+                <li><strong>Scale:</strong> Some open pits can be kilometers wide and hundreds of meters deep (e.g., Bingham Canyon Mine, Grasberg Mine).</li>
+                <li><strong>Features:</strong> Characterized by benches (terraces) on the pit walls for stability and access.</li>
+                <li><strong>Post-Closure:</strong> Often fill with water to become pit lakes, creating new aquatic environments with unique water quality challenges. (Chapter 26.5).</li>
+            </ul>
+            <div class="image-placeholder">
+                <p>Placeholder: Aerial view of a large open-pit mine (e.g., Batu Hijau, Fig 16.2 in OCR).</p>
+                 <img src="https://www.google.com/search?q=Batu+Hijau+mine+aerial&tbm=isch&ved=2ahUKEwipg_vP0YGEAxXgJaMAHZfUD_AQ2-cCegQIABAA&oq=Batu+Hijau+mine+aerial&gs_lcp=CgNpbWcQAzoECCMQJ1AAWABgvyFoAHAAeACAAQCIAQCSAQCYAQCqAQtnd3Mtd2l6LWltZw&sclient=img&ei=uWzFZLz5E-DXjLsPl9K_gA8&bih=707&biw=1325#imgrc=j9dGkr_L0Qf-fM" alt="Batu Hijau Open Pit (Example Search)">
+            </div>
+
+            <h3>2.2 Elevated Landforms: Waste Rock Dumps and Tailings Storage Facilities</h3>
+             <div class="definition">
+                <p><strong>Waste Rock Dumps/Storages:</strong> Large engineered piles of non-ore material (overburden and rock not containing economic minerals) removed to access the ore. These can be among the largest man-made structures. (Chapter 24).</p>
+            </div>
+            <ul>
+                <li><strong>Location:</strong> Ideally placed to minimize haulage distances and environmental impact, but often occupy significant land areas.</li>
+                <li><strong>Design:</strong> Engineered for long-term physical and geochemical stability. Designs include valley fills, ridge dumps, and terraced structures. New fill slopes are created.</li>
+                <li><strong>Environmental Concerns:</strong> Potential for erosion, slope instability, and ARD if sulphide-bearing. (Chapter 24.2).</li>
+            </ul>
+             <div class="definition">
+                <p><strong>Tailings Storage Facilities (TSFs) / Impoundments:</strong> Engineered structures designed to contain fine-grained waste (tailings) from mineral processing, typically mixed with water as a slurry. (Chapter 23).</p>
+            </div>
+            <ul>
+                <li><strong>Scale:</strong> Can cover vast areas, often requiring large dams to impound the tailings.</li>
+                <li><strong>Impact on Landform:</strong> Creates new, often flat or gently sloping surfaces (tailings beaches) and elevated dam structures.</li>
+                <li><strong>Environmental Concerns:</strong> Risk of dam failure, seepage of contaminated water, wind erosion of dried tailings.</li>
+            </ul>
+            <div class="image-placeholder">
+                <p>Placeholder: Image of a large waste rock dump and a tailings storage facility with its dam.</p>
+                 <img src="https://www.google.com/search?q=mine+waste+rock+dump+and+tailings+dam&tbm=isch&ved=2ahUKEwjM4fuR0oGEAxWRnWMGHcFwBPEQ2-cCegQIABAA&oq=mine+waste+rock+dump+and+tailings+dam&gs_lcp=CgNpbWcQAzoECCMQJ1CSB1iSByCsCGgAcAB4AIABAIgBAJIBAJgBAKABAaoBC2d3cy13aXotaW1n&sclient=img&ei=4WzFZK7qJZK7juMPwfGRiA8&bih=707&biw=1325#imgrc=9o19j7sW7dZDbM" alt="Waste Rock Dump & Tailings Dam (Example Search)">
+            </div>
+
+            <h3>2.3 Other Landform Alterations</h3>
+            <ul>
+                <li><strong>Infrastructure Footprints:</strong> Processing plants, roads, railways, pipelines, power lines, and accommodation facilities all occupy land and can alter local topography and drainage.</li>
+                <li><strong>Subsidence:</strong> Lowering of the ground surface, primarily associated with underground mining due to the collapse of voids. Can create troughs or sinkholes. (Chapter 16.1.3).</li>
+            </ul>
+        </section>
+
+        <section id="land-use-changes">
+            <h2>3. Shifting Landscapes: Mining and Land Use Change</h2>
+            <p>Mining operations lead to significant changes in how land is used, both directly within the mine lease and indirectly in surrounding areas. (Referenced in Chapters 8.2.5, 10, & 16).</p>
+            <ul>
+                <li><strong>Direct Conversion:</strong> Pre-mining land uses (e.g., forestry, agriculture, natural habitat, traditional indigenous uses) are directly replaced by mining infrastructure and activities.</li>
+                <li><strong>Loss of Access:</strong> Traditional users may lose access to resources like hunting grounds, water sources, or culturally significant sites.</li>
+                <li><strong>Indirect Changes (Induced Development):</strong>
+                    <ul>
+                        <li>New settlements or expansion of existing ones to accommodate workforce and support services.</li>
+                        <li>Development of new agricultural areas or other economic activities spurred by the mine's presence or improved access (e.g., new roads).</li>
+                    </ul>
+                </li>
+                <li><strong>Post-Mining Land Use:</strong> A critical aspect of mine closure planning is determining the future land use for rehabilitated areas. This could be a return to a semblance of the original ecosystem, agriculture, forestry, recreation, or other industrial uses. (Chapter 26.4.1).</li>
+            </ul>
+            <div class="interactive-placeholder">Interactive Map Placeholder: "Before & After" slider. Show a pre-mining land use map (e.g., forest, agriculture) and then overlay the mine footprint and potential induced development areas.</div>
+            <h4>The "Residual Footprint"</h4>
+            <p>Even with best-practice rehabilitation, some landform changes are essentially permanent (e.g., large open pits that become pit lakes, very large waste rock dumps). This remaining altered area is sometimes referred to as the "residual footprint." The goal of mine closure is to make this footprint safe, stable, and, where possible, integrated into a productive or ecologically functional post-mining landscape.</p>
+        </section>
+
+        <section id="assessing-mitigating-land">
+            <h2>4. Assessing and Mitigating Landform & Land Use Impacts</h2>
+            <p>Addressing these extensive changes requires careful assessment during the ESIA phase and proactive management and rehabilitation throughout the mine life and into closure.</p>
+            <h3>4.1 Assessment:</h3>
+            <ul>
+                <li><strong>Baseline Studies:</strong> Documenting pre-mining topography, landforms, land capability, existing land uses, and ecological/cultural values. (Chapter 9).</li>
+                <li><strong>Visual Impact Assessment:</strong> Evaluating how the mine will alter the visual landscape from key viewpoints.</li>
+                <li><strong>Land Use Planning Integration:</strong> Ensuring mine development is consistent with, or appropriately amends, regional and local land use plans.</li>
+                <li><strong>Stakeholder Consultation:</strong> Engaging with communities and other stakeholders regarding potential impacts on their land use and values.</li>
+            </ul>
+            <h3>4.2 Mitigation & Rehabilitation (Chapter 24.3, 26):</h3>
+            <ul>
+                <li><strong>Minimizing Footprint:</strong> Optimizing mine layout and design to reduce the area of disturbance. For example, using in-pit disposal of waste rock where feasible.</li>
+                <li><strong>Progressive Rehabilitation:</strong> Rehabilitating disturbed areas as soon as they are no longer needed for operations, rather than waiting until final closure.</li>
+                <li><strong>Landform Design for Stability and Function:</strong>
+                    <ul>
+                        <li>Engineering waste rock dumps and tailings facilities for long-term geotechnical stability and to control erosion.</li>
+                        <li>Shaping landforms to blend with the surrounding landscape, promote drainage, and support the intended post-mining land use.</li>
+                    </ul>
+                </li>
+                <li><strong>Topsoil Management:</strong> Stripping, stockpiling, and respreading topsoil to aid in revegetation. (Chapter 26.4.2).</li>
+                <li><strong>Revegetation:</strong> Establishing appropriate plant communities to stabilize landforms, control erosion, and support biodiversity or agricultural use.</li>
+                <li><strong>Relinquishment:</strong> Ultimately, the goal is to return the land to a state where it can be relinquished to the government or subsequent land users for a sustainable future.</li>
+            </ul>
+            <div class="learn-more">
+                <button onclick="toggleLearnMore('lm-landformdesign')">Learn More: Landform Design Objectives</button>
+                <div id="lm-landformdesign" class="learn-more-content">
+                    <p>Key objectives for waste rock storage landform design (Chapter 24.3):
+                    1. Minimize the area occupied (footprint).
+                    2. Ensure the new landform is stable.
+                    3. Ensure the new landform is not more erodible than comparable natural landforms.
+                    4. If ARD is a risk, design to prevent or control its occurrence.
+                    5. Make the surface amenable to rehabilitation for future land use.
+                    6. Ensure the landform is, if possible, congruent with its surrounds (not visually intrusive).
+                    Trade-offs are often necessary, e.g., the smallest footprint might involve very steep slopes which are harder to rehabilitate and less stable.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-studies-land">
+            <h2>5. Case Study Snippet</h2>
+            <h4>Waste Rock Dumps at Batu Hijau, Indonesia</h4>
+            <p>The Batu Hijau copper-gold mine in Sumbawa, Indonesia, involves the movement of vast quantities of waste rock. The design and construction of the waste rock dumps are critical engineering and environmental undertakings. The dumps are designed in terraces to ensure stability and facilitate progressive rehabilitation. Techniques like "bottom-up" construction are used to improve compaction and stability. Careful management of surface water runoff and erosion control are essential due to the tropical high-rainfall environment. (Referenced in Chapter 22, Case 22.3 showing outslope compaction).</p>
+            <div class="image-placeholder">
+                <p>Placeholder: Photo of a large, terraced waste rock dump undergoing rehabilitation.</p>
+                <img src="https://www.google.com/search?q=Batu+Hijau+waste+rock+dump+rehabilitation&tbm=isch&ved=2ahUKEwjV8q7b04GEAxWhmFYBHb-bB3cQ2-cCegQIABAA&oq=Batu+Hijau+waste+rock+dump+rehabilitation&gs_lcp=CgNpbWcQAzoECCMQJ1DmB1jmB2C8CWgAcAB4AIABAIgBAJIBAJgBAKABAaoBC2d3cy13aXotaW1n&sclient=img&ei=R27FZNDaNaGz2roPv7eeuAc&bih=707&biw=1325#imgrc=l-8-b0i5Wp3i9M" alt="Rehabilitated Waste Rock Dump (Example Search)">
+            </div>
+        </section>
+        
+        <section id="quiz-final">
+            <h2>Check Your Understanding</h2>
+            <div class="quiz-container" id="final-quiz-1">
+                <p class="quiz-question"><strong>Question 1:</strong> What is the term for the ratio of waste rock excavated to the amount of ore excavated?</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('fq1', 'a', this)">a) Grade Ratio</button>
+                    <button onclick="checkAnswer('fq1', 'b', this)">b) Stripping Ratio</button>
+                    <button onclick="checkAnswer('fq1', 'c', this)">c) Recovery Ratio</button>
+                    <button onclick="checkAnswer('fq1', 'd', this)">d) Footprint Ratio</button>
+                </div>
+                <div id="feedback-fq1" class="feedback"></div>
+            </div>
+            <div class="quiz-container" id="final-quiz-2">
+                <p class="quiz-question"><strong>Question 2:</strong> "Below-grade storage" of waste rock primarily refers to placing it:</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('fq2', 'a', this)">a) On top of a specially constructed liner system.</button>
+                    <button onclick="checkAnswer('fq2', 'b', this)">b) In a valley fill impoundment.</button>
+                    <button onclick="checkAnswer('fq2', 'c', this)">c) Within mined-out open pits or underground voids.</button>
+                    <button onclick="checkAnswer('fq2', 'd', this)">d) Under a thick layer of topsoil and vegetation.</button>
+                </div>
+                <div id="feedback-fq2" class="feedback"></div>
+            </div>
+        </section>
+
+        <section id="conclusion">
+            <h2>6. Conclusion: Shaping a Responsible Mining Legacy</h2>
+            <p>Changes to land use and landform are inherent to most mining operations and can be among the most visible and lasting impacts. Surface mining, and the extensive areas required for overburden, waste rock, and tailings disposal, fundamentally reshape landscapes. However, through careful site selection, integrated mine planning that considers closure from the outset, sound engineering design, progressive rehabilitation, and a commitment to creating stable and productive post-mining land uses, the long-term environmental and social consequences can be responsibly managed. The goal is to minimize the "residual footprint" and ensure that mined lands can support beneficial future uses, whether for ecological conservation, agriculture, or other community needs.</p>
+            <h3>Points for Reflection & Discussion:</h3>
+            <ul>
+                <li>How can community input best be integrated into the design of post-mining landforms and land uses?</li>
+                <li>What are the major challenges in achieving successful long-term rehabilitation in different climatic zones (e.g., arid vs. tropical)?</li>
+                <li>How does the economic viability of a mine influence the extent and quality of landform rehabilitation that can be achieved?</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dental ORE Prep Online</p>
+    </footer>
+
+    <script>
+        const answers = {
+            diagnostic: 'c',
+            fq1: 'b',
+            fq2: 'c'
+        };
+
+        function checkAnswer(quizId, selectedOption, buttonEl) {
+            const feedbackEl = document.getElementById('feedback-' + quizId);
+            const optionsContainer = buttonEl.parentElement;
+            const buttons = optionsContainer.getElementsByTagName('button');
+
+            for (let btn of buttons) {
+                btn.disabled = true;
+                btn.classList.remove('selected'); 
+            }
+            buttonEl.classList.add('selected');
+
+            if (selectedOption === answers[quizId]) {
+                feedbackEl.textContent = 'Correct! '+ (quizId === 'diagnostic' ? 'Open-pit mining typically involves moving the most material.' : 'Excellent work!');
+                feedbackEl.className = 'feedback correct';
+            } else {
+                const correctAns = answers[quizId].toUpperCase();
+                feedbackEl.textContent = 'Not quite. The correct answer is ' + correctAns + '. '+ (quizId === 'diagnostic' ? 'Consider the scale of material movement.' : 'Please review the relevant sections for clarification.');
+                feedbackEl.className = 'feedback incorrect';
+            }
+        }
+
+        function toggleLearnMore(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                button.textContent = "Show Less";
+            } else {
+                content.style.display = "none";
+                let originalText = button.getAttribute('data-original-text');
+                if (!originalText) { 
+                    originalText = button.textContent; // Fallback if attribute not set
+                    if (originalText.startsWith("Show Less")) { // Reconstruct original "Learn More: Topic"
+                         const topic = button.closest('section').querySelector('h3, h4, h2').textContent.split(':')[0].trim();
+                         originalText = `Learn More: ${topic}`;
+                    }
+                    button.setAttribute('data-original-text', originalText);
+                }
+                 button.textContent = originalText;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const learnMoreButtons = document.querySelectorAll('.learn-more button');
+            learnMoreButtons.forEach(button => {
+                button.setAttribute('data-original-text', button.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
