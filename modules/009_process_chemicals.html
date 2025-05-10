@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining Impacts: Process Chemicals - Mercury & Cyanide</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif; /* More traditional, serious font */
+            line-height: 1.75;
+            margin: 0;
+            padding: 0;
+            background-color: #faf3e0; /* Creamy beige background */
+            color: #4a3b31; /* Dark brown text */
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1050px;
+            margin: 30px auto;
+            overflow: hidden;
+            padding: 35px;
+            background-color: #ffffff;
+            box-shadow: 0 7px 22px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            border: 1px solid #e0d8cd;
+        }
+
+        header {
+            background: #795548; /* Brown */
+            color: #fff;
+            padding: 2.2rem 1.5rem;
+            text-align: center;
+            margin-bottom: 35px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.6em;
+            font-weight: 600;
+        }
+        header p {
+            color: #f5f5f5; /* Off-white for subtitle */
+            font-size: 1.15em;
+        }
+
+        section {
+            margin-bottom: 45px;
+            padding: 28px;
+            border-left: 6px solid #8D6E63; /* Lighter Brown accent */
+            background-color: #fffbf5; /* Very light cream */
+        }
+
+        h2 {
+            color: #5D4037; /* Darker Brown */
+            border-bottom: 2px solid #A1887F; /* Muted Brown accent for H2 */
+            padding-bottom: 14px;
+            font-size: 2.1em;
+            margin-bottom: 22px;
+        }
+
+        h3 {
+            color: #3E2723; /* Very Dark Brown */
+            margin-top: 30px;
+            font-size: 1.7em;
+        }
+         h4 {
+            color: #6D4C41; /* Medium Brown */
+            font-size: 1.3em;
+            font-style: italic;
+            margin-top: 18px;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+
+        .interactive-placeholder, .image-placeholder {
+            background-color: #f5efea; /* Light creamy beige */
+            border: 2px dashed #A1887F;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #5D4037;
+            border-radius: 8px;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            max-height: 300px;
+            margin-top: 12px;
+            border-radius: 6px;
+            box-shadow: 0 3px 7px rgba(0,0,0,0.08);
+        }
+
+        .quiz-container {
+            background-color: #fdf6ec; /* Pale cream for quiz */
+            border: 1px solid #e6dbcf; /* Muted beige border */
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+
+        .quiz-question {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #3E2723;
+        }
+
+        .quiz-options button {
+            display: block;
+            margin: 8px 0;
+            padding: 12px 18px;
+            background-color: #8D6E63; /* Muted brown buttons */
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            border-radius: 6px;
+            transition: background-color 0.25s;
+        }
+
+        .quiz-options button:hover {
+            background-color: #795548;
+        }
+        .quiz-options button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .quiz-options button.selected {
+            border: 3px solid #301b13 !important; /* Darkest Brown */
+            font-weight: bold;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .learn-more button {
+            background-color: #A1887F; /* Muted Brown */
+            color: #301b13;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 18px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .learn-more button:hover {
+            background-color: #8D6E63;
+        }
+
+        .learn-more-content {
+            display: none;
+            background-color: #fdf6ec;
+            padding: 20px;
+            margin-top: 15px;
+            border: 1px solid #e6dbcf;
+            border-radius: 6px;
+        }
+        .definition {
+            background-color: #fff3e0; /* Light orange-beige */
+            padding: 12px;
+            border-left: 5px solid #795548;
+            margin: 18px 0;
+            border-radius: 5px;
+        }
+        .definition strong {
+            color: #3E2723;
+        }
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border: 1px solid #ffeeba;
+            border-left-width: 5px;
+            border-left-color: #ffc107;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warning strong {
+            color: #664d03;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #795548;
+            color: #fff;
+            margin-top: 35px;
+            border-radius: 0 0 12px 12px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 2.1em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+             h3 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Handle with Care: Impacts of Process Chemicals in Mining</h1>
+        <p>Focusing on Mercury, Cyanide, and Hazardous Material Management</p>
+    </header>
+
+    <div class="container">
+        <section id="intro">
+            <h2>1. Introduction: Chemicals in Mineral Extraction</h2>
+            <p>Mineral processing often involves the use of chemicals to extract valuable metals from ore. While many of these reagents are relatively harmless or are neutralized during the process, some, like mercury and cyanide, have gained significant public attention due to their toxicity and association with historical environmental incidents. This lesson examines the impacts of these specific chemicals, the broader concerns of hazardous material management, and strategies for safe use, disposal, and impact mitigation.</p>
+            <h3>Lesson Objectives:</h3>
+            <ul>
+                <li>Understand why mercury and cyanide are used in certain mining processes (primarily gold extraction).</li>
+                <li>Identify the environmental and health risks associated with mercury and cyanide.</li>
+                <li>Recognize that proper management can significantly reduce these risks.</li>
+                <li>Discuss the importance of managing other hazardous and toxic materials used or generated in mining.</li>
+                <li>Outline principles for safe handling, storage, transportation, and disposal of process chemicals and their residues.</li>
+            </ul>
+            <div class="quiz-container" id="diagnostic-quiz">
+                <p class="quiz-question"><strong>Quick Question:</strong> Cyanide is primarily used in the mining industry for the extraction of which metal?</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('diagnostic', 'a', this)">a) Copper</button>
+                    <button onclick="checkAnswer('diagnostic', 'b', this)">b) Iron</button>
+                    <button onclick="checkAnswer('diagnostic', 'c', this)">c) Gold</button>
+                </div>
+                <div id="feedback-diagnostic" class="feedback"></div>
+            </div>
+        </section>
+
+        <section id="cyanide-mining">
+            <h2>2. Cyanide in Gold Extraction: Use and Concerns</h2>
+            <p>Sodium cyanide (NaCN) solutions are widely used in the modern gold mining industry to dissolve gold from finely crushed ore. This process is known as cyanidation or cyanide leaching. (Referenced in Chapter 7.2.2 of "Mining and the Environment").</p>
+
+            <h3>2.1 Why is Cyanide Used?</h3>
+            <ul>
+                <li><strong>Effectiveness:</strong> Cyanide is highly effective at selectively dissolving gold and silver from ore, even at very low concentrations.</li>
+                <li><strong>Economics:</strong> It has historically been a cost-effective method for large-scale gold recovery.</li>
+            </ul>
+            <p>The basic chemical reaction involves gold reacting with cyanide in the presence of oxygen and water to form a soluble gold-cyanide complex.</p>
+            <div class="definition">
+                <p><strong>Cyanidation:</strong> A metallurgical technique for extracting gold from low-grade ore by converting the gold to a water-soluble coordination complex. It is the most common leaching process for gold extraction.</p>
+            </div>
+
+            <h3>2.2 Environmental and Health Risks of Cyanide:</h3>
+            <div class="warning">
+                <p><strong>High Toxicity:</strong> Cyanide is highly toxic to most living organisms, including humans, fish, and wildlife. It interferes with cellular respiration.</p>
+            </div>
+            <ul>
+                <li><strong>Spills and Leaks:</strong> Accidental releases of cyanide-containing solutions from tailings dams, pipelines, or processing plants can cause catastrophic fish kills and contaminate water supplies. (Chapter 7.7 & 23).</li>
+                <li><strong>Wildlife Poisoning:</strong> Birds and other wildlife can be poisoned if they drink from or come into contact with cyanide solutions in open ponds (e.g., tailings ponds, heap leach ponds).</li>
+                <li><strong>Persistence:</strong> While cyanide can degrade naturally under sunlight (photodecomposition) and through biological action, this process can be slow, and cyanide can persist in groundwater or under conditions of low light and oxygen. (Chapter 7.2.4).</li>
+            </ul>
+            <div class="image-placeholder">
+                <p>Placeholder: Diagram of a gold heap leach operation showing cyanide solution spray and collection ponds.</p>
+            </div>
+
+            <h3>2.3 Managing Cyanide Risks:</h3>
+            <p>The mining industry has developed extensive practices to manage cyanide safely, largely codified in the International Cyanide Management Code (ICMC):</p>
+            <ul>
+                <li><strong>Containment:</strong> Using robust, lined tailings storage facilities and process ponds to prevent seepage and spills.</li>
+                <li><strong>Detoxification:</strong> Treating cyanide-containing solutions before discharge or at mine closure to break down cyanide into less harmful substances (e.g., using processes like INCO SO<sub>2</sub>/Air, hydrogen peroxide). (Chapter 7.2.4).</li>
+                <li><strong>Wildlife Protection:</strong> Netting or covering cyanide ponds, using deterrents.</li>
+                <li><strong>Emergency Response Planning:</strong> Having detailed plans in place to manage spills or accidental releases.</li>
+                <li><strong>Monitoring:</strong> Regular monitoring of water quality, wildlife, and facility integrity.</li>
+            </ul>
+            <p>The ICMC is a voluntary industry program for gold mining companies, and producers and transporters of cyanide, to promote responsible management and reduce environmental risks.</p>
+        </section>
+
+        <section id="mercury-mining">
+            <h2>3. Mercury in Mining: A Legacy and Ongoing Challenge</h2>
+            <p>Mercury (Hg) has been historically used in gold mining, particularly in artisanal and small-scale gold mining (ASGM), due to its ability to form an amalgam with gold. (Referenced in Chapter 13.2.2 & 16.3.2 for Artisanal Mining).</p>
+
+            <h3>3.1 How Mercury is Used in Gold Recovery:</h3>
+            <p>Miners mix liquid elemental mercury with gold-bearing ores or sediments. The mercury binds to the gold particles to form a solid amalgam. This amalgam is then heated, often in open pans or retorts, to vaporize the mercury, leaving behind the gold.</p>
+            <div class="definition">
+                <p><strong>Amalgamation:</strong> The process of forming an alloy (amalgam) of mercury with another metal, such as gold. Heating the amalgam separates the mercury by vaporization.</p>
+            </div>
+
+            <h3>3.2 Environmental and Health Risks of Mercury:</h3>
+            <div class="warning">
+                <p><strong>High Toxicity & Persistence:</strong> Mercury and its compounds, especially methylmercury, are highly toxic neurotoxins. Elemental mercury vaporized during amalgam heating is a major source of air pollution.</p>
+            </div>
+            <ul>
+                <li><strong>Atmospheric Deposition:</strong> Airborne mercury can travel long distances before being deposited in soils and water bodies.</li>
+                <li><strong>Methylation:</strong> In aquatic environments, inorganic mercury can be converted by bacteria into methylmercury, a highly bioavailable and toxic organic form.</li>
+                <li><strong>Bioaccumulation & Biomagnification:</strong> Methylmercury accumulates in aquatic organisms and biomagnifies up the food chain, reaching high concentrations in predatory fish, which can then be consumed by humans and wildlife.</li>
+                <li><strong>Health Impacts:</strong> Neurological damage (Minamata disease), developmental problems in children, kidney damage.</li>
+                <li><strong>ASGM Hotspots:</strong> Artisanal and small-scale gold mining is the largest anthropogenic source of mercury pollution globally, leading to severe localized and regional contamination.</li>
+            </ul>
+            <div class="image-placeholder">
+                <p>Placeholder: Image depicting artisanal gold miners using mercury, or a diagram showing mercury's cycle and bioaccumulation in the environment.</p>
+                <img src="https://www.google.com/search?q=artisanal+gold+mining+mercury+environmental+impact&tbm=isch&ved=2ahUKEwjFh-Xo1oGEAxX7gGMGHZz4DBgQ2-cCegQIABAA&oq=artisanal+gold+mining+mercury+environmental+impact&gs_lcp=CgNpbWcQAzoECCMQJ1AAWABgnDRoAHAAeACAAQCIAQCSAQCYAQCqAQtnd3Mtd2l6LWltZw&sclient=img&ei=UHTCZM_jA_eAmgWc8bPKAQ&bih=707&biw=1325#imgrc=Y0JgK1D9s8eRkM" alt="Artisanal Mining with Mercury (Example Search)">
+            </div>
+
+            <h3>3.3 Reducing Mercury Use and Impacts:</h3>
+            <ul>
+                <li><strong>Phasing out Mercury in Large-Scale Mining:</strong> Modern large-scale gold mines no longer use mercury due to its environmental risks and the availability of more efficient technologies like cyanidation.</li>
+                <li><strong>Addressing ASGM:</strong> This is a complex socio-economic issue. Efforts include:
+                    <ul>
+                        <li>Promoting mercury-free ASGM technologies (e.g., gravity concentration, direct smelting).</li>
+                        <li>Training miners on safer practices, including the use of retorts to capture mercury vapor during amalgam heating.</li>
+                        <li>Formalizing the ASGM sector to improve regulation and environmental management.</li>
+                        <li>Remediation of mercury-contaminated sites.</li>
+                    </ul>
+                </li>
+                <li><strong>The Minamata Convention on Mercury:</strong> An international treaty (entered into force in 2017) designed to protect human health and the environment from anthropogenic emissions and releases of mercury and mercury compounds.</li>
+            </ul>
+        </section>
+
+        <section id="other-hazardous-materials">
+            <h2>4. Management of Other Hazardous and Toxic Materials</h2>
+            <p>While mercury and cyanide receive significant attention, mines use and generate a range of other potentially hazardous materials that require careful management. (Referenced in Chapter 16.2.4 for "Other Wastes" and 16.8 for "Accidental Environmental Impacts").</p>
+            <ul>
+                <li><strong>Acids and Alkalis:</strong> Used in various leaching and processing circuits (e.g., sulphuric acid for copper or uranium leaching, caustic soda for alumina). Spills can cause burns and severe environmental damage.</li>
+                <li><strong>Solvents and Reagents:</strong> Organic solvents used in solvent extraction (SX) processes, flotation reagents, flocculants. Some can be flammable, toxic, or persistent.</li>
+                <li><strong>Fuels, Oils, and Lubricants:</strong> Essential for vehicles and machinery. Spills can contaminate soil and water.</li>
+                <li><strong>Explosives:</strong> Residues (e.g., nitrates) can leach into water. Improper storage or handling is a safety risk.</li>
+                <li><strong>Waste Containing Heavy Metals:</strong> As discussed with waste rock and tailings, even if not acutely toxic initially, these can become problematic over time through leaching or ARD.</li>
+            </ul>
+            <h3>Principles of Hazardous Material Management:</h3>
+            <ol>
+                <li><strong>Inventory and Characterization:</strong> Knowing what hazardous materials are on site, their quantities, properties, and risks.</li>
+                <li><strong>Substitution:</strong> Where possible, replacing highly hazardous materials with less hazardous alternatives.</li>
+                <li><strong>Secure Storage:</strong> Storing chemicals in designated, bunded (contained) areas, protected from weather, with proper labeling and segregation of incompatible materials.</li>
+                <li><strong>Safe Handling and Transportation:</strong> Training personnel, using appropriate personal protective equipment (PPE), and having clear procedures.</li>
+                <li><strong>Spill Prevention and Emergency Response:</strong> Implementing measures to prevent spills (e.g., secondary containment) and having robust emergency plans to deal with accidents.</li>
+                <li><strong>Proper Disposal:</strong> Disposing of hazardous waste through licensed and approved facilities, according to regulatory requirements. This includes contaminated soils, empty containers, and process residues.</li>
+            </ol>
+            <div class="learn-more">
+                <button onclick="toggleLearnMore('lm-sds')">Learn More: Safety Data Sheets (SDS)</button>
+                <div id="lm-sds" class="learn-more-content">
+                    <p>A Safety Data Sheet (SDS), formerly known as Material Safety Data Sheet (MSDS), is a document that provides comprehensive information about a substance or mixture for use in workplace chemical management. SDSs include information on the properties of each chemical; the physical, health, and environmental health hazards; protective measures; and safety precautions for handling, storing, and transporting the chemical. They are a critical resource for risk assessment and emergency response.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz-final">
+            <h2>Check Your Understanding</h2>
+            <div class="quiz-container" id="final-quiz-1">
+                <p class="quiz-question"><strong>Question 1:</strong> The primary environmental risk associated with mercury use in artisanal gold mining is:</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('fq1', 'a', this)">a) Generation of acid rock drainage.</button>
+                    <button onclick="checkAnswer('fq1', 'b', this)">b) Release of mercury vapor and contamination of water/soil leading to bioaccumulation.</button>
+                    <button onclick="checkAnswer('fq1', 'c', this)">c) Creation of large volumes of saline tailings.</button>
+                    <button onclick="checkAnswer('fq1', 'd', this)">d) Depletion of atmospheric oxygen.</button>
+                </div>
+                <div id="feedback-fq1" class="feedback"></div>
+            </div>
+            <div class="quiz-container" id="final-quiz-2">
+                <p class="quiz-question"><strong>Question 2:</strong> The International Cyanide Management Code (ICMC) primarily aims to:</p>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer('fq2', 'a', this)">a) Ban the use of cyanide in all mining operations globally.</button>
+                    <button onclick="checkAnswer('fq2', 'b', this)">b) Promote the responsible manufacturing, transport, and use of cyanide in gold mining.</button>
+                    <button onclick="checkAnswer('fq2', 'c', this)">c) Fund research into alternatives to cyanide for gold extraction.</button>
+                    <button onclick="checkAnswer('fq2', 'd', this)">d) Compensate communities affected by historical cyanide spills.</button>
+                </div>
+                <div id="feedback-fq2" class="feedback"></div>
+            </div>
+        </section>
+
+        <section id="conclusion">
+            <h2>6. Conclusion: Responsibility in Chemical Use</h2>
+            <p>The use of process chemicals is often indispensable in modern mining for efficient mineral recovery. However, certain chemicals, notably mercury and cyanide, carry significant environmental and health risks that have rightly attracted public and regulatory scrutiny. While many other concentration chemicals are less intrinsically harmful, all hazardous and toxic materials require meticulous management. This involves a lifecycle approach: from careful selection and substitution where possible, to secure storage, safe handling, robust operational controls, emergency preparedness, and environmentally sound disposal or detoxification of residues. International codes, conventions like Minamata, and best practice guidelines provide frameworks for responsible chemical management, aiming to minimize mining's chemical footprint and protect ecosystems and human health.</p>
+            <h3>Points for Reflection & Discussion:</h3>
+            <ul>
+                <li>Why do mercury and cyanide continue to be used in some mining sectors despite their known risks?</li>
+                <li>What are the biggest challenges in implementing the International Cyanide Management Code, especially for smaller mining operations?</li>
+                <li>How can transparency regarding chemical use and potential risks be improved with local communities?</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dental ORE Prep Online</p>
+    </footer>
+
+    <script>
+        const answers = {
+            diagnostic: 'c',
+            fq1: 'b',
+            fq2: 'b'
+        };
+
+        function checkAnswer(quizId, selectedOption, buttonEl) {
+            const feedbackEl = document.getElementById('feedback-' + quizId);
+            const optionsContainer = buttonEl.parentElement;
+            const buttons = optionsContainer.getElementsByTagName('button');
+
+            for (let btn of buttons) {
+                btn.disabled = true;
+                btn.classList.remove('selected'); 
+            }
+            buttonEl.classList.add('selected');
+
+            if (selectedOption === answers[quizId]) {
+                feedbackEl.textContent = 'Correct! '+ (quizId === 'diagnostic' ? 'Cyanide is a key reagent in gold leaching.' : 'That\'s right!');
+                feedbackEl.className = 'feedback correct';
+            } else {
+                const correctAns = answers[quizId].toUpperCase();
+                feedbackEl.textContent = 'Not quite. The correct answer is ' + correctAns + '. '+ (quizId === 'diagnostic' ? 'Gold forms soluble complexes with cyanide.' : 'Review the relevant sections for more detail.');
+                feedbackEl.className = 'feedback incorrect';
+            }
+        }
+
+        function toggleLearnMore(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            let originalText = button.getAttribute('data-original-text');
+            if (!originalText) { 
+                originalText = button.textContent;
+                button.setAttribute('data-original-text', originalText);
+            }
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                button.textContent = "Show Less";
+            } else {
+                content.style.display = "none";
+                button.textContent = originalText;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const learnMoreButtons = document.querySelectorAll('.learn-more button');
+            learnMoreButtons.forEach(button => {
+                button.setAttribute('data-original-text', button.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
